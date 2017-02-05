@@ -1,0 +1,2 @@
+class PnrsController < ApplicationController
+end
