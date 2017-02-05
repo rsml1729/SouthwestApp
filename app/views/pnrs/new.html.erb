@@ -1,23 +1,38 @@
-<div class="container">
-	<h1>Southwest Check-in App</h1>
-	<p>Add a new flight reservation or look up an existing reservation:</p>
-	<%= form_for(@pnr) do |f| %>
+<div class="header">
+	<div class="container">
+		<h1><img src=<%= asset_path('southwest_logo.svg') %> > Auto Check-in</h1>
+	</div>
+</div>
 
-		<%= f.label :rcrd_loc, 'Confirmation #' %>: <%= f.text_field :rcrd_loc %> <%= @pnr.errors[:rcrd_loc] %> <br />
+<div class="pnr"> <div class="container"> <p>Add a new flight reservation or look up an existing reservation:</p><br />
 	
-		<%= f.label :first_name, 'First Name' %>:
-		<%= f.text_field :first_name %> <br />
+		<%= form_for(@pnr) do |f| %>
 		
-		<%= f.label :last_name, 'Last Name' %>:
-		<%= f.text_field :last_name %> <br />
+			<div class="fields">
+				<%= f.label :rcrd_loc, '*Confirmation #' %>
+				<%= f.text_field :rcrd_loc %>
+			
+				<%= f.label :first_name, '*First Name' %>
+				<%= f.text_field :first_name %>
+		
+				<%= f.label :last_name, '*Last Name' %>
+				<%= f.text_field :last_name %>
 	
-		<%= f.label :email, 'Email' %>:
-		<%= f.text_field :email %> <br />
+				<%= f.label :email, '*Email' %>
+				<%= f.text_field :email %>
 	
-		<%= f.label :a_list, 'A-List?' %>:
-		<%= f.check_box :a_list %> <br />
+				<%= f.label :a_list, 'A-List?' %>
+				<%= f.check_box :a_list %>
+			</div>
+			
+			<div class="errors">
+				<%= @pnr.errors.full_messages.first if @pnr.errors.any? %>
+			</div>
+			
+			<div class="actions">
+				<%= f.submit 'Submit' %>
+			</div>
 	
-		<%= f.submit 'Submit' %>
-	
-	<% end %>
+		<% end %>
+	</div>
 </div>

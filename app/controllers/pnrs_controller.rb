@@ -1,4 +1,8 @@
 class PnrsController < ApplicationController
+
+  def index
+    redirect_to :action => 'new'
+  end
   
   def new
     @pnr = Pnr.new

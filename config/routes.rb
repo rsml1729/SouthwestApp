@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   resources :pnrs, param: :rcrd_loc
   
-  get 'pnrs/index' => 'pnrs#new'
+  get '/pnrs/' => 'pnrs#new'
   
   root to: 'pnrs#new'
   

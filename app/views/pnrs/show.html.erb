@@ -1,8 +1,18 @@
-<div class="container">
-	<h1>Reservation Details</h1>
-	<p>Confirmation #: <%= @pnr.rcrd_loc %></p>
-	<p>Passenger: <%= @pnr.last_name %>, <%= @pnr.first_name %> (<%= @pnr.email %>)</p>
-	<p>A-List Status: <% if @pnr.a_list %>Yes<% else %>No<% end %></p>
-	
-	<h2>Flights</h2>
+<div class="header">
+	<div class="container">
+		<h1><img src=<%= asset_path('southwest_logo.svg') %> > Auto Check-in</h1>
+	</div>
+</div>
+
+<div class="pnr">
+	<div class="container">
+		<h2>Reservation Details</h2>
+		<table>
+			<tr><td>Confirmation #</td><td><%= @pnr.rcrd_loc %></td></tr>
+			<tr><td>Passenger</td> <td><%= @pnr.last_name %>, <%= @pnr.first_name %></td> </tr>
+			<tr><td></td><td>(<%= @pnr.email %>)</td></tr>
+			<tr><td>A-List Status</td><td><% if @pnr.a_list %>Yes<% else %>No<% end %></td></tr>
+		</table>
+		<h2>Flights</h2>
+	</div>
 </div>
