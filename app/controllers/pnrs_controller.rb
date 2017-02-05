@@ -16,6 +16,7 @@ class PnrsController < ApplicationController
     else
       render 'new'
     end
+
   end
   
   def show
@@ -24,6 +25,6 @@ class PnrsController < ApplicationController
   
   private
   def pnr_params
-    params.require(:pnr).permit(:rcrd_loc, :first_name, :last_name, :email)
+    params.require(:pnr).permit(:rcrd_loc, :first_name, :last_name, :email, :a_list)
   end
 end

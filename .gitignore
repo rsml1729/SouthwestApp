@@ -22,3 +22,6 @@
 
 # Mac-specific
 .DS_Store
+
+# Misc
+/app/assets/data/*

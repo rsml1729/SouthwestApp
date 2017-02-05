@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170205065540) do
+ActiveRecord::Schema.define(version: 20170205124626) do
 
   create_table "pnrs", id: false, force: :cascade do |t|
     t.string   "rcrd_loc"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20170205065540) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["rcrd_loc"], name: "index_pnrs_on_rcrd_loc", unique: true
+  end
+
+  create_table "whitelists", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "member"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

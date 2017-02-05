@@ -1,8 +1,4 @@
-<div class="header">
-	<div class="container">
-		<h1><img src=<%= asset_path('southwest_logo.svg') %> > Auto Check-in</h1>
-	</div>
-</div>
+<%= render "layouts/header" %>
 
 <div class="pnr"> <div class="container"> <p>Add a new flight reservation or look up an existing reservation:</p><br />
 	
@@ -26,7 +22,7 @@
 			</div>
 			
 			<div class="errors">
-				<%= @pnr.errors.full_messages.first if @pnr.errors.any? %>
+				<%= @pnr.errors.first.second if @pnr.errors.any? %>
 			</div>
 			
 			<div class="actions">

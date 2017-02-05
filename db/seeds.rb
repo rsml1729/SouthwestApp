@@ -5,4 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-p1 = Pnr.create(rcrd_loc: 'ABCDEF', first_name: 'Tim', last_name: 'Dumbo', email: 'tim.dumbo@gmail.com', a_list: FALSE)
+p1 = Pnr.create(rcrd_loc: 'ABCDEF', first_name: 'Tim', last_name: 'Dumbo', email: 'tim.dumbo@chicagobooth.edu', a_list: FALSE)
