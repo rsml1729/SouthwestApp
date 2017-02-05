@@ -1,3 +1,17 @@
 // Place all the styles related to the pnrs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body, p {
+	margin: 0;
+}
+
+body {
+	background-color: #eee;
+	font-family: 'Arial', sans-serif;
+}
+
+.container {
+	width: 480px;
+	margin: 0 auto;
+}

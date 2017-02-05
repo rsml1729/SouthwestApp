@@ -1,0 +1,23 @@
+<div class="container">
+	<h1>Southwest Check-in App</h1>
+	<p>Add a new flight reservation or look up an existing reservation:</p>
+	<%= form_for(@pnr) do |f| %>
+
+		<%= f.label :rcrd_loc, 'Confirmation #' %>: <%= f.text_field :rcrd_loc %> <%= @pnr.errors[:rcrd_loc] %> <br />
+	
+		<%= f.label :first_name, 'First Name' %>:
+		<%= f.text_field :first_name %> <br />
+		
+		<%= f.label :last_name, 'Last Name' %>:
+		<%= f.text_field :last_name %> <br />
+	
+		<%= f.label :email, 'Email' %>:
+		<%= f.text_field :email %> <br />
+	
+		<%= f.label :a_list, 'A-List?' %>:
+		<%= f.check_box :a_list %> <br />
+	
+		<%= f.submit 'Submit' %>
+	
+	<% end %>
+</div>

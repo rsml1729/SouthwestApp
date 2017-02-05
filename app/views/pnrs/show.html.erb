@@ -1,0 +1,8 @@
+<div class="container">
+	<h1>Reservation Details</h1>
+	<p>Confirmation #: <%= @pnr.rcrd_loc %></p>
+	<p>Passenger: <%= @pnr.last_name %>, <%= @pnr.first_name %> (<%= @pnr.email %>)</p>
+	<p>A-List Status: <% if @pnr.a_list %>Yes<% else %>No<% end %></p>
+	
+	<h2>Flights</h2>
+</div>
