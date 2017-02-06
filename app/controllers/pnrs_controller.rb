@@ -21,6 +21,7 @@ class PnrsController < ApplicationController
   
   def show
     @pnr = Pnr.find(params[:rcrd_loc])
+    @segments = @pnr.segments
   end
   
   private

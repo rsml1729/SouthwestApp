@@ -8,7 +8,7 @@ class CreatePnrs < ActiveRecord::Migration[5.0]
       t.boolean :a_list
       t.timestamps
     end
-    
+
     add_index :pnrs, :rcrd_loc, unique: true
   end
 end
