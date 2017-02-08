@@ -24,4 +24,4 @@
 .DS_Store
 
 # Misc
-/app/assets/data/*
+#/app/assets/data/*

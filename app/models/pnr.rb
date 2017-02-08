@@ -4,7 +4,7 @@ class Pnr < ApplicationRecord
   validates_presence_of :first_name, message: 'First Name cannot be blank'
   validates_presence_of :last_name, message: 'Last Name cannot be blank'
   validates_presence_of :email, message: 'Email cannot be blank'
-  validate :email_on_whitelist
+  validate :email_booth
   validate :pnr_is_valid
   
   has_many :segments
@@ -12,8 +12,8 @@ class Pnr < ApplicationRecord
   self.primary_key = 'rcrd_loc'
   
   private
-  def email_on_whitelist
-    Whitelist.exists?(:email => email) ? return : errors.add(:email, 'Invalid BoothHacks member email')
+  def email_booth
+    email.include?("@chicagobooth.edu") ? return : errors.add(:email, 'Invalid Booth email')
   end
   
   def pnr_is_valid

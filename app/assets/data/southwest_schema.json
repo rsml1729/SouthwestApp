@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "required": ["passengers", "itinerary"],
+  "properties": {
+    "passengers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["secureFlightName"],
+        "properties": {
+          "secureFlightName": {
+            "type": "object",
+            "required": ["firstName", "lastName"]
+          }
+        }
+      }
+    },
+    "itinerary": {
+      "type": "object",
+      "required": ["originationDestinations"],
+      "properties": {
+        "originationDestinations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["segments"],
+            "properties": {
+              "segments": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": ["departureDateTime", "originationAirportCode"],
+                  "properties": {
+                    "departureDateTime": {
+                      "type": "string",
+                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}[Tt][0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3}[+-][0-9]{2}:[0-9]{2}$"
+                    },
+                    "originationAirportCode": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z]{3}$"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
