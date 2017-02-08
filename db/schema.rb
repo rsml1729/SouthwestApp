@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206002255) do
+ActiveRecord::Schema.define(version: 20170205124626) do
 
   create_table "pnrs", id: false, force: :cascade do |t|
     t.string   "rcrd_loc"
@@ -24,14 +24,13 @@ ActiveRecord::Schema.define(version: 20170206002255) do
   end
 
   create_table "segments", force: :cascade do |t|
-    t.string   "rcrd_loc"
     t.string   "od"
     t.string   "flt_num"
     t.datetime "flt_time"
     t.datetime "checkin_time"
+    t.         "pnr_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "pnr_id"
     t.index ["pnr_id"], name: "index_segments_on_pnr_id"
   end
 

@@ -7,10 +7,10 @@ class Pnr < ApplicationRecord
   validate :email_booth
   validate :pnr_is_valid
   
-  has_many :segments
-  
+  has_many :segments#, :primary_key => 'rcrd_loc'
+    
   self.primary_key = 'rcrd_loc'
-  
+
   private
   def email_booth
     email.include?("@chicagobooth.edu") ? return : errors.add(:email, 'Invalid Booth email')
@@ -56,7 +56,7 @@ def pnr_lookup(pnr)
   response_json['passengers'][0]['checkinEligibilities'].each do |s|
     seg = s['segmentId'].split('|')
     flt_time = DateTime.strptime(seg[0].split(',')[0],'%Y%m%d%H%M%z')
-    @segment = Segment.new(:rcrd_loc => pnr.rcrd_loc, 
+    @segment = Segment.new(#:rcrd_loc => pnr.rcrd_loc, 
                            :od => seg[1], 
                            :flt_num => seg[2],
                            :flt_time => flt_time,
