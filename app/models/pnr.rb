@@ -7,7 +7,7 @@ class Pnr < ApplicationRecord
   validate :email_booth
   validate :pnr_is_valid
   
-  has_many :segments#, :primary_key => 'rcrd_loc'
+  has_many :segments
     
   self.primary_key = 'rcrd_loc'
 
@@ -56,8 +56,7 @@ def pnr_lookup(pnr)
   response_json['passengers'][0]['checkinEligibilities'].each do |s|
     seg = s['segmentId'].split('|')
     flt_time = DateTime.strptime(seg[0].split(',')[0],'%Y%m%d%H%M%z')
-    @segment = Segment.new(#:rcrd_loc => pnr.rcrd_loc, 
-                           :od => seg[1], 
+    @segment = Segment.new(:od => seg[1], 
                            :flt_num => seg[2],
                            :flt_time => flt_time,
                            :checkin_time => flt_time - 1.hour)
