@@ -6,7 +6,7 @@ class CreateSegments < ActiveRecord::Migration[5.0]
       t.string :flt_num
       t.datetime :flt_time
       t.datetime :checkin_time
-      t.references :pnr, type: :rcrd_loc
+      t.references :pnr, type: :string
       t.timestamps
     end
     

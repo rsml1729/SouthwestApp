@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170208231453) do
     t.string   "flt_num"
     t.datetime "flt_time"
     t.datetime "checkin_time"
-    t.         "pnr_id"
+    t.string   "pnr_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["pnr_id"], name: "index_segments_on_pnr_id"
