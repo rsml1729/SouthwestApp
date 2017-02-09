@@ -59,7 +59,7 @@ def pnr_lookup(pnr)
     @segment = Segment.new(:od => seg[1], 
                            :flt_num => seg[2],
                            :flt_time => flt_time,
-                           :checkin_time => flt_time - 1.hour)
+                           :checkin_time => (pnr.a_list ? flt_time - 36.hours : flt_time - 24.hours))
     @segment.save
     pnr.segments << @segment
   end

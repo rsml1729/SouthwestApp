@@ -2,7 +2,7 @@
 
 <div class="pnr">
 	<div class="container">
-		
+		<div>		
 		<h2>Reservation Details</h2>
 		<table>
 			<tr><td>Confirmation #</td><td><%= @pnr.rcrd_loc %></td></tr>
@@ -10,7 +10,9 @@
 			<tr><td></td><td>(<%= @pnr.email %>)</td></tr>
 			<tr><td>A-List Status</td><td><% if @pnr.a_list %>Yes<% else %>No<% end %></td></tr>
 		</table>
+		</div>
 		
+		<div>
 		<h2>Flights</h2>
 		<table class='segments'>
 			<tr><th>Flt #</th> <th>Route</th> <th>Flt Time</th> <th>Check-in</th></tr>
@@ -18,5 +20,15 @@
 			<tr><td><%= s.flt_num %></td> <td><%= s.od %></td> <td><%= s.flt_time %></td> <td><%= s.checkin_time %></td></tr>
 			<% end %>
 		</table>
+		</div>
+		
+		<div class="actions">
+			<%= link_to "Remove Reservation", @pnr, method: :delete, 
+				data: { confirm: "Delete this reservation?" } %>
+		</div>
+		
+		<div>
+			<%= link_to "<< Back", root_path %>
+		</div>
 	</div>
 </div>
