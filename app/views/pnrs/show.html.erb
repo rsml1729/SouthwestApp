@@ -23,7 +23,7 @@
 		</div>
 		
 		<div class="actions">
-			<%= link_to "Remove Reservation", @pnr, method: :delete, 
+			<%= link_to "Remove Reservation", pnr_path(@pnr.rcrd_loc), method: :delete, 
 				data: { confirm: "Delete this reservation?" } %>
 		</div>
 		

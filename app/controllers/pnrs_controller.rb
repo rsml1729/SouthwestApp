@@ -24,6 +24,12 @@ class PnrsController < ApplicationController
     @segments = @pnr.segments
   end
   
+  def destroy
+    Pnr.find(params[:rcrd_loc]).destroy
+    flash[:info] = "Reservation removed"
+    redirect_to root_path
+  end
+  
   private
   def pnr_params
     params.require(:pnr).permit(:rcrd_loc, :first_name, :last_name, :email, :a_list)

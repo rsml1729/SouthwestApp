@@ -7,7 +7,7 @@ class Pnr < ApplicationRecord
   validate :email_booth
   validate :pnr_is_valid
   
-  has_many :segments
+  has_many :segments, dependent: :destroy
     
   self.primary_key = 'rcrd_loc'
 
