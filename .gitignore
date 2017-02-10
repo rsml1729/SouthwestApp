@@ -24,4 +24,5 @@
 .DS_Store
 
 # Misc
+/defunct
 #/app/assets/data/*
